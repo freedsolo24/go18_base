@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func ninemultiply() {
+func table9() {
 	var width int
 	for i := 1; i <= 9; i++ {
 		width = 2
@@ -16,5 +16,5 @@ func ninemultiply() {
 	}
 }
 func main() {
-	ninemultiply()
+	table9()
 }
