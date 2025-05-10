@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 func table9() {
 	var width int
@@ -27,6 +30,27 @@ func table9() {
 		fmt.Println()
 	}
 }
+
+func random_addmul() {
+
+	var sum int = 0
+	var mul uint64 = 1
+	for i := 0; i < 10; i++ {
+		random := rand.Intn(20) + 1
+		if random&1 == 1 {
+			sum += random // 任何数与1与，结果是1，是奇数
+		} else {
+			mul *= uint64(random)
+		}
+		fmt.Printf("%d  ", random)
+	}
+	fmt.Printf("\n奇数随机数的累和=%d,偶数随机数的累乘=%d\n", sum, mul)
+}
+
 func main() {
 	table9()
+	fmt.Printf("++++++++++++\n")
+	random_addmul()
+	fmt.Printf("++++++++++++\n")
+
 }
