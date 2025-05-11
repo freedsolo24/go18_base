@@ -47,10 +47,37 @@ func random_addmul() {
 	fmt.Printf("\n奇数随机数的累和=%d,偶数随机数的累乘=%d\n", sum, mul)
 }
 
+func fib_loop(n int) int {
+	switch {
+	case n < 0:
+		panic("项数不能为负数")
+	case n == 0:
+		return 0
+	case n == 1:
+		return 1
+	case n == 2:
+		return 1
+	}
+	a, b := 1, 1
+	for i := 0; i < n-2; i++ {
+		tmp := a + b
+		a = b
+		b = tmp
+	}
+	return b // 最后return b，函数体消亡
+}
+
 func main() {
+
 	table9()
 	fmt.Printf("++++++++++++\n")
 	random_addmul()
 	fmt.Printf("++++++++++++\n")
-
+	for i := 0; ; i++ {
+		if fib_loop(i) < 100 {
+			fmt.Printf("fib(%d)=%d\n", i, fib_loop(i))
+		} else {
+			break
+		}
+	}
 }
