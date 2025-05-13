@@ -29,11 +29,42 @@
 * 此题的关键2，fib_loop函数中，for循环体内如何计算，观察fib手写找出规律
 * 此题的关键3，fib_loop函数中，for循环条件如何写，怎么控制运行的趟数，观察fib手写找出规律，fib(3)跑一趟，fib(4)跑2趟
 * 此题的关键4，怎么控制把之前的fib结果都打印出来，不是在fib_loop函数中实现，是在main函数中实现
-### 1.3.2 斐波那契数列_递归版 fib_rcrs
+### 1.3.2 斐波那契数列_递归版 fib_recuform
 1. 是递归版，所以就不用写循环了
 2. 直接return，根据公式来
 3. 递归公式就是前进段，也得有返回段，返回段就是switch中的fib(0)=0, fib(1)=1, fib(2)=1
 4. 和循环版的比较：
-   * 递归版有返回段，前进段是自己调用自己，压栈
-   * 循环版有两个初值，传进来项数，要循环n-2趟，才能得出fib(n)，内部做的算法a+b->tmp  b->a  tmp->b
-### 1.3.3 斐波那契数列_高阶版 fib_wrap
+   * 递归版有返回段，前进段是自己调用自己，一直在栈帧里面叠压栈，直到遇到返回段层层消栈
+   * 循环版有两个初值，传进来项数，要循环n-2趟，才能计算出出fib(n)，内部做的算法a+b->tmp  b->a  tmp->b。for循环i=0，i++,关键是要推算出中间循环多少趟
+### 1.3.3 斐波那契数列_循环改递归版 fib_fib_reculoop
+1. 函数设定，传项数，两个初值a=1，b=1
+2. 算法类似循环版，最后return自己在调用自己，直到返回段return b
+3. 类似递归版也是一直在压栈，最终return
+4. 和循环版的比较：
+   * 没有for语句控制趟数
+   * 实际的趟数递归自己，是return 自己调用自己这个函数，让项数-1，最后返回b
+   * 初值要传参进来，不能在函数内定义
+5. 和递归版的比较：
+   * 递归公式版压栈：fib_recuform(5)=fib_recuform(4)+fib_recuform(3)
+                   先做左边的分支:       fib_recuform(4)=fib_recuform(3)+fib_recuform(2){1}
+                                        fib_recuform(3)=fib_recuform(2){1}+fib_recuform(1){1}=2
+                                        fib_recuform(4)=2+1=3
+                   左边的分支有return了: fib_recuform(5)=3+fib_recuform(3)
+
+                   在做右边的分支:
+                                        fib_recuform(3)=fib_recuform(2){1}+fib_recuform(1){1}=2
+               
+                   最终 return 5:       fib_recuform(5)=3+2=5
+                                     
+                
+      递归版压栈进行了大量的重复计算。fib_recuform(5)先进行左边的fib_recuform(4)压栈，直到return 3。在进行右边的fib_recuform(3)压栈，直到return 2。最后fib_recuform(5) return 5。
+   * 递归循环版压栈：fib_reculoop(5,1,1)--->
+                                           fib_reculoop(4,1,2)--->
+                                                                   fib_reculoop(3,2,3)--->
+                                                                                           fib_reculoop(2,3,5)  
+     最终运行到n=2，将b的计算结果return，直接fib_fib_reculoop函数消亡。函数压栈了4次得出结果。
+   * 循环版: 第一趟 i=0, i<5-2=3 True, a=1 b=1 tmp=2  最终:a=1 b=2
+            第二趟 i=1, i<5-2=3 True, a=1 b=2 tmp=3 最终: a=2 b=3
+            第三趟 i=2, i<5-2=3 True, a=2 b=3 tmp=5 最终: a=3 b=5
+            第四趟 i=3, i<5-2=3 False 不满足条件退出循环
+            最终return b=5。循环做了4次，计算做了3次。
