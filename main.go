@@ -43,8 +43,8 @@ func main() {
 	s2 = append(s2, 100)
 	str3 := "在s2切片基础上追加元素扩容s2切片:"
 	fmt.Printf("|%-22s|%s", str3, getSliceDetails(s2))
-
 	// 一个字符算一个宽度，不管中文，英文，标点
+
 	fmt.Println("==========第二章：数组转成切片============")
 	fmt.Printf("数组转成切片，类型:%[1]T, 内容:%[1]v\n", arraySlice())
 
