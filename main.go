@@ -48,4 +48,6 @@ func main() {
 	fmt.Println("==========第二章：数组转成切片============")
 	fmt.Printf("数组转成切片，类型:%[1]T, 内容:%[1]v\n", arraySlice())
 
+	fmt.Println("==========第二章：随机数重复次数============")
+	numsRepeat()
 }
