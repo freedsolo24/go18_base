@@ -34,5 +34,6 @@ func numsRepeat() {
 	for key, value := range m {
 		fmt.Printf("随机数:%d,重复的次数:%d   ", key, value)
 	}
+	fmt.Println()
 
 }

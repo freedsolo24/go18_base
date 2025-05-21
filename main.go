@@ -50,4 +50,8 @@ func main() {
 
 	fmt.Println("==========第二章：随机数重复次数============")
 	numsRepeat()
+
+	fmt.Println("==========第三章：阶乘循环============")
+	fmt.Printf("%d的阶乘=%d\n", 5, factorial_loop(5))
+
 }
