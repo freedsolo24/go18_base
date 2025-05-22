@@ -54,4 +54,6 @@ func main() {
 	fmt.Println("==========第三章：阶乘循环============")
 	fmt.Printf("%d的阶乘=%d\n", 5, factorial_loop(5))
 
+	fmt.Println("==========第三章：阶乘递归============")
+	fmt.Printf("%d的阶乘=%d\n", 6, factorial_loop(6))
 }

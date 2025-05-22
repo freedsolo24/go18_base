@@ -21,6 +21,12 @@ func factorial_loop(n int) int {
 }
 
 func factorial_recu(n int) int {
+	switch {
+	case n < 0:
+		panic("项数不能小于0")
+	case n < 2:
+		return 1
+	}
 
-	return 0
+	return n * factorial_recu(n-1)
 }
