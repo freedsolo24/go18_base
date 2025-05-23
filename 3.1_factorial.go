@@ -20,7 +20,7 @@ func factorial_loop(n int) int {
 	return tmp
 }
 
-func factorial_recu(n int) int {
+func factorial_recuform(n int) int {
 	switch {
 	case n < 0:
 		panic("项数不能小于0")
@@ -28,5 +28,9 @@ func factorial_recu(n int) int {
 		return 1
 	}
 
-	return n * factorial_recu(n-1)
+	return n * factorial_recuform(n-1)
 }
+
+// func factorial_reculoop(x, y int) int {
+
+// }
