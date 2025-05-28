@@ -57,8 +57,11 @@ func main() {
 	numsRepeat()
 
 	fmt.Println("==========第三章：阶乘循环============")
-	fmt.Printf("%d的阶乘=%d\n", 5, factorial_loop(5))
+	fmt.Printf("%d的阶乘=%d\n", 3, factorial_loop(3))
 
 	fmt.Println("==========第三章：阶乘递归============")
-	fmt.Printf("%d的阶乘=%d\n", 6, factorial_recuform(6))
+	fmt.Printf("%d的阶乘=%d\n", 4, factorial_recuform(4))
+
+	fmt.Println("==========第三章: 阶乘循环递归============")
+	fmt.Printf("%d的阶乘=%d\n", 5, factorial_reculoop(5, 1))
 }

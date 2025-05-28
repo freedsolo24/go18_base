@@ -31,6 +31,16 @@ func factorial_recuform(n int) int {
 	return n * factorial_recuform(n-1)
 }
 
-// func factorial_reculoop(x, y int) int {
+func factorial_reculoop(n int, p int) int {
 
-// }
+	switch {
+	case n < 0:
+		panic("项数不能小于0")
+	case n < 2:
+		return p
+
+	}
+	p = n * p
+
+	return factorial_reculoop(n-1, p)
+}
