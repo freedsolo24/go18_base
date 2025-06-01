@@ -64,4 +64,23 @@ func main() {
 
 	fmt.Println("==========第三章: 阶乘循环递归============")
 	fmt.Printf("%d的阶乘=%d\n", 5, factorial_reculoop(5, 1))
+
+	fmt.Println("==========第三章: 01.打印正数矩阵============")
+	countup(3)
+	fmt.Println("==========第三章: 02.打印倒数矩阵============")
+	countdown(3)
+	fmt.Println("==========第三章: 03.打印左下三角正数============")
+	leftdownTriangleCountup(3)
+	fmt.Println("==========第三章: 04.打印左下三角倒数============")
+	leftdownTriangleCountdown(3)
+	fmt.Println("==========第三章: 05.打印左上三角正数============")
+	leftupTriangleCountup(3)
+	fmt.Println("==========第三章: 06.打印左上三角倒数============")
+	leftupTriangleCountdown(3)
+	fmt.Println("==========第三章: 07.打印右下三角倒数============")
+	rightdownTriangleCountdown(3)
+	fmt.Println("==========第三章: 08.打印右下三角正数============")
+	rightdownTriangleCountup(3)
+	fmt.Println("==========第三章: 09.打印右下三角倒数切片解法====")
+	rightdownTriangleCountdownSlice(3)
 }
