@@ -81,6 +81,17 @@ func main() {
 	rightdownTriangleCountdown(3)
 	fmt.Println("==========第三章: 08.打印右下三角正数============")
 	rightdownTriangleCountup(3)
-	fmt.Println("==========第三章: 09.打印右下三角倒数切片解法====")
+	fmt.Println("==========第三章: 09.打印右下三角倒数切片解法=====")
 	rightdownTriangleCountdownSlice(3)
+	fmt.Println("==========第四章: 01.求面积=====")
+	circle := NewCircle(4)
+	triangle := NewTriangle(2, 2)
+	rectangle := NewRectangle(2, 3)
+	var s Interfacer
+	s = circle
+	fmt.Printf("圆形的面积是:  %f\n", s.area())
+	s = triangle
+	fmt.Printf("三角形的面积是:%f\n", s.area())
+	s = rectangle
+	fmt.Printf("长方形的面积是:%f\n", s.area())
 }
