@@ -94,4 +94,20 @@ func main() {
 	fmt.Printf("三角形的面积是:%f\n", s.area())
 	s = rectangle
 	fmt.Printf("长方形的面积是:%f\n", s.area())
+	fmt.Println("==========在理解一下高阶函数的用法=====")
+
+	// 函数的签名要一致,里面定义我想让他怎么做,这是一个匿函,调用之后就消亡
+	// 加法要这么做
+	i := highorder(3, 4, func(a, b int) int {
+		z := a + b
+		return z
+	})
+	fmt.Printf("求加法:%d\n", i)
+
+	// 乘法要这么做
+	j := highorder(5, 6, func(a, b int) int {
+		z := a * b
+		return z
+	})
+	fmt.Printf("求乘法:%d\n", j)
 }
