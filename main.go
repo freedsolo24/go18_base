@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 func main() {
@@ -110,4 +111,21 @@ func main() {
 		return z
 	})
 	fmt.Printf("求乘法:%d\n", j)
+	fmt.Println("==========第四章: 02.排序==================")
+
+	ins1 := newcircle(3)
+	ins2 := newtriangle(2, 4)
+	ins3 := newrectangle(2, 5)
+
+	ifs := []interfacers{ins1, ins2, ins3}
+	// sort.Slice函数专门给切片做排序。
+	// 传一个切片进去，然后在传一个匿函，匿函自定义我想怎么排序
+	// 自定义的匿名函数要接收2个i,j，返回bool,自定义的匿名函数就是一个"比较器"
+	sort.Slice(ifs, func(i, j int) bool {
+		return ifs[i].calcarea() < ifs[j].calcarea()
+	})
+	// 遍历观察就地排序后的结果
+	for index, value := range ifs {
+		fmt.Printf("%+v,%+v\n", index, value)
+	}
 }
