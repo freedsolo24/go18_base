@@ -128,4 +128,11 @@ func main() {
 	for index, value := range ifs {
 		fmt.Printf("%+v,%+v\n", index, value)
 	}
+	fmt.Println("==========第四章: 03.fib递归cache版==================")
+
+	// for i := 0; i <= 4; i++ {
+	// 	fmt.Printf("fib(%d)=%d\n", i, fibUseCache(i))
+	// }
+	fmt.Printf("计算后: fib(%d)=%d\n", 4, fibUseCache(4))
+	fmt.Printf("后:打印整个cache: %v\n", fibCache)
 }
