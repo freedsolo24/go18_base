@@ -135,4 +135,7 @@ func main() {
 	}
 	// fmt.Printf("计算后: fib(%d)=%d\n", 4, fibUseCache(4))
 	// fmt.Printf("后:打印整个cache: %v\n", fibCache)
+
+	fmt.Println("==========第四章: 04. time==================")
+	timeTest()
 }
