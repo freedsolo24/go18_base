@@ -138,4 +138,9 @@ func main() {
 
 	fmt.Println("==========第四章: 04. time==================")
 	timeTest()
+
+	fmt.Println("==========第五章: 01. numbers v1==================")
+	nums1()
+	fmt.Println("==========第五章: 01. numbers v2==================")
+	nums2()
 }
