@@ -27,6 +27,7 @@ func getReverse(s string) string {
 
 	length := len(s) // len函数针对string类型, 取的是它的字节数
 	// s是string类型, 虽然可以通过s[i]对string进行遍历, 但是不能对s[i]做修改
+	// 想对string做修改, 需要类型转换成[]byte, []byte和string类型不同,但是底层结构一样
 	b := []byte(s)
 	var swap int
 	if length&1 == 0 {

@@ -147,9 +147,4 @@ func main() {
 	string := getString(5)
 	fmt.Printf("正序的字符串: %s\n", string)
 	fmt.Printf("逆序的字符串: %s\n", getReverse(string))
-
-	for i := 0; i < len(string); i++ {
-		fmt.Println(string[i])
-		fmt.Printf("%c\n", string[i])
-	}
 }
