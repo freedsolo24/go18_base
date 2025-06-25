@@ -147,4 +147,7 @@ func main() {
 	string := getString(5)
 	fmt.Printf("正序的字符串: %s\n", string)
 	fmt.Printf("逆序的字符串: %s\n", getReverse(string))
+	fmt.Println("==========第五章: 03. mergestring==================")
+	newString := merge("abc", "efgxyz")
+	fmt.Println(newString)
 }
